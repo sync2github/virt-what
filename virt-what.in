@@ -1,4 +1,4 @@
-#!/bin/bash -
+#!/bin/sh -
 # @configure_input@
 # Copyright (C) 2008-2011 Red Hat Inc.
 #
@@ -33,12 +33,12 @@ skip_qemu_kvm=false
 
 VERSION="@VERSION@"
 
-function fail {
+fail() {
     echo "virt-what: $1" >&2
     exit 1
 }
 
-function usage {
+usage() {
     echo "virt-what [options]"
     echo "Options:"
     echo "  --help          Display this help"
