@@ -32,9 +32,9 @@ man_MANS = virt-what.1
 
 virt-what.1: virt-what.pod
 	pod2man -c "Virtualization Support" --release "$(PACKAGE)-$(VERSION)" \
-	  $< > $@
+	  $? > $@
 virt-what.txt: virt-what.pod
-	pod2text $< > $@
+	pod2text $? > $@
 
 endif
 
