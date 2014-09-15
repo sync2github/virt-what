@@ -51,24 +51,21 @@ usage() {
 }
 
 # Handle the command line arguments, if any.
-
-TEMP=$(getopt -o v --long help --long version --long test-root: -n 'virt-what' -- "$@")
-if [ $? != 0 ]; then exit 1; fi
-eval set -- "$TEMP"
-
-while true; do
+while test $# -gt 0; do
     case "$1" in
 	--help) usage ;;
-        --test-root)
+        --test-root=*)
             # Deliberately undocumented: used for 'make check'.
-            root="$2"
-            shift 2
+            root=$(echo "$1" | sed 's/.*=//')
+            shift 1
+            test -z "$root" && fail "--test-root option requires a value"
             ;;
 	-v|--version) echo "$VERSION"; exit 0 ;;
 	--) shift; break ;;
-	*) fail "internal error ($1)" ;;
+	*) fail "unrecognized option '$1'";;
     esac
 done
+test $# -gt 0 && fail "extra operand '$1'"
 
 # Add /sbin and /usr/sbin to the path so we can find system
 # binaries like dmidecode.
