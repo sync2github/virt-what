@@ -33,6 +33,10 @@ skip_qemu_kvm=false
 
 VERSION="@VERSION@"
 
+have_cpuinfo() {
+    test -e "${root}/proc/cpuinfo"
+}
+
 fail() {
     echo "virt-what: $1" >&2
     exit 1
@@ -152,7 +156,8 @@ if [ -e "${root}/proc/1/environ" ] &&
 fi
 
 # Check for Linux-VServer
-if cat "${root}/proc/self/status" | grep -q "VxID: [0-9]*"; then
+if test -e "${root}/proc/self/status" \
+   && cat "${root}/proc/self/status" | grep -q "VxID: [0-9]*"; then
     echo linux_vserver
     if grep -q "VxID: 0$" "${root}/proc/self/status"; then
         echo linux_vserver-host
@@ -163,12 +168,13 @@ fi
 
 # Check for UML.
 # Added by Laurent Léonard.
-if grep -q 'UML' "${root}/proc/cpuinfo"; then
+if have_cpuinfo && grep -q 'UML' "${root}/proc/cpuinfo"; then
     echo uml
 fi
 
 # Check for IBM PowerVM Lx86 Linux/x86 emulator.
-if grep -q '^vendor_id.*PowerVM Lx86' "${root}/proc/cpuinfo"; then
+if have_cpuinfo && grep -q '^vendor_id.*PowerVM Lx86' "${root}/proc/cpuinfo"
+then
     echo powervm_lx86
 fi
 
@@ -179,7 +185,7 @@ if echo "$dmi" | grep -q 'Manufacturer.*HITACHI' &&
 fi
 
 # Check for IBM SystemZ.
-if grep -q '^vendor_id.*IBM/S390' "${root}/proc/cpuinfo"; then
+if have_cpuinfo && grep -q '^vendor_id.*IBM/S390' "${root}/proc/cpuinfo"; then
     echo ibm_systemz
     if [ -f "${root}/proc/sysinfo" ]; then
         if grep -q 'VM.*Control Program.*z/VM' "${root}/proc/sysinfo"; then
