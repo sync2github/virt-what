@@ -80,6 +80,12 @@ if [ "x$root" = "x" ] && [ "$EFFUID" -ne 0 ]; then
     fail "this script must be run as root"
 fi
 
+# Try to locate the CPU-ID helper program
+CPUID_HELPER=$(which virt-what-cpuid-helper 2>/dev/null)
+if [ -z "$CPUID_HELPER" ] ; then
+    fail "virt-what-cpuid-helper program not found in \$PATH"
+fi
+
 # Many fullvirt hypervisors give an indication through CPUID.  Use the
 # helper program to get this information.
 
