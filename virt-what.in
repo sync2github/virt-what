@@ -74,8 +74,9 @@ exec_prefix=@exec_prefix@
 PATH="${root}@libexecdir@:${root}/sbin:${root}/usr/sbin:${PATH}"
 
 # Check we're running as root.
+EFFUID=$(id -u) || fail "failed to get current user id"
 
-if [ "x$root" = "x" ] && [ "$EUID" -ne 0 ]; then
+if [ "x$root" = "x" ] && [ "$EFFUID" -ne 0 ]; then
     fail "this script must be run as root"
 fi
 
