@@ -33,16 +33,16 @@ skip_qemu_kvm=false
 
 VERSION="@VERSION@"
 
-have_cpuinfo() {
+have_cpuinfo () {
     test -e "${root}/proc/cpuinfo"
 }
 
-fail() {
+fail () {
     echo "virt-what: $1" >&2
     exit 1
 }
 
-usage() {
+usage () {
     echo "virt-what [options]"
     echo "Options:"
     echo "  --help          Display this help"
