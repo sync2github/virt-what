@@ -103,7 +103,7 @@ dmi=$(LANG=C dmidecode 2>&1)
 # Architecture.
 # Note for the purpose of testing, we only call uname with -p option.
 
-arch=$(uname -p)
+arch=$(uname -p | sed -e 's/i.86/i386/' | sed -e 's/arm.*/arm/')
 
 # Check for VMware.
 # cpuid check added by Chetan Loke.
@@ -223,6 +223,13 @@ elif [ -f "${root}/sys/hypervisor/type" ] &&
     # enough information at present to tell whether this is dom0
     # or domU.  XXX
     echo xen
+elif [ "$arch" = "arm" ] || [ "$arch" = "aarch64" ]; then
+    if [ -d "${root}/proc/device-tree/hypervisor" ] &&
+        grep -q "xen" "${root}/proc/device-tree/hypervisor/compatible"; then
+        echo xen
+        skip_qemu_kvm=true
+        skip_lkvm=true
+    fi
 elif [ "$arch" = "ia64" ]; then
     if [ -d "${root}/sys/bus/xen" -a ! -d "${root}/sys/bus/xen-backend" ]; then
         # PV-on-HVM drivers installed in a Xen guest.
@@ -250,6 +257,14 @@ fi
 if ! "$skip_qemu_kvm"; then
     if [ "$cpuid" = "KVMKVMKVM" ]; then
 	echo kvm
+    elif [ "$arch" = "arm" ] || [ "$arch" = "aarch64" ]; then
+        if [ -d "${root}/proc/device-tree" ] &&
+            ls "${root}/proc/device-tree" | grep -q "fw-cfg"; then
+            # We don't have enough information to determine if we're
+            # using KVM acceleration or not.
+            echo qemu
+            skip_lkvm=true
+        fi
     else
         # XXX This is known to fail for qemu with the explicit -cpu
         # option, since /proc/cpuinfo will not contain the QEMU
@@ -264,6 +279,11 @@ fi
 if ! "$skip_lkvm"; then
     if [ "$cpuid" = "LKVMLKVMLKVM" ]; then
         echo lkvm
+    elif [ "$arch" = "arm" ] || [ "$arch" = "aarch64" ]; then
+        if [ -d "${root}/proc/device-tree" ] &&
+            grep -q "dummy-virt" "${root}/proc/device-tree/compatible"; then
+            echo lkvm
+	fi
     fi
 fi
 
