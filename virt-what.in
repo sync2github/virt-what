@@ -30,6 +30,7 @@
 set -u
 root=''
 skip_qemu_kvm=false
+skip_lkvm=false
 
 VERSION="@VERSION@"
 
@@ -215,6 +216,7 @@ elif [ -d "${root}/proc/xen" ]; then
         echo xen-domU
     fi
     skip_qemu_kvm=true
+    skip_lkvm=true
 elif [ -f "${root}/sys/hypervisor/type" ] &&
     grep -q "xen" "${root}/sys/hypervisor/type"; then
     # Ordinary kernel with pv_ops.  There does not seem to be
@@ -256,6 +258,12 @@ if ! "$skip_qemu_kvm"; then
         if grep -q 'QEMU' "${root}/proc/cpuinfo"; then
 	    echo qemu
 	fi
+    fi
+fi
+
+if ! "$skip_lkvm"; then
+    if [ "$cpuid" = "LKVMLKVMLKVM" ]; then
+        echo lkvm
     fi
 fi
 
