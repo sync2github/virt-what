@@ -101,6 +101,14 @@ instead.
 
 Status: confirmed by RWMJ.
 
+=item B<lkvm>
+
+This guest is running on the KVM hypervisor using hardware
+acceleration, and the userspace component of the hypervisor
+is lkvm (a.k.a kvmtool).
+
+Status: contributed by Andrew Jones
+
 =item B<openvz>
 
 The guest appears to be running inside an OpenVZ or Virtuozzo
