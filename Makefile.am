@@ -201,7 +201,7 @@ EXTRA_DIST = \
 	tests/rhel5-xen-domU-pv/sys/hypervisor/compilation/compile_date \
 	tests/rhel5-xen-domU-pv/sys/hypervisor/uuid \
 	tests/xen-arm/proc/cpuinfo \
-	tests/xen-arm/proc/device-tree/compatible \
+	tests/xen-arm/proc/device-tree/hypervisor/compatible \
 	tests/xen-arm/proc/self/status \
 	tests/xen-arm/sbin/dmidecode \
 	tests/xen-arm/sbin/uname \
