@@ -203,6 +203,11 @@ if echo "$dmi" | grep -q 'Vendor: Parallels'; then
     skip_qemu_kvm=true
 fi
 
+# Check for oVirt.
+if echo "$dmi" | grep -q 'Manufacturer: oVirt'; then
+    echo ovirt
+fi
+
 # Check for Xen.
 
 if [ "$cpuid" = "XenVMMXenVMM" ]; then
