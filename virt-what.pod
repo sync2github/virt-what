@@ -116,6 +116,12 @@ container.
 
 Status: contributed by Evgeniy Sokolov
 
+=item B<ovirt>
+
+The guest is running on an oVirt or RHEV node.
+
+Status: contributed by RWMJ, not confirmed
+
 =item B<parallels>
 
 The guest is running inside Parallels Virtual Platform
