@@ -53,6 +53,7 @@ TESTS = \
 	tests/test-parallels-desktop.sh \
 	tests/test-qemu.sh \
 	tests/test-qemu-arm.sh \
+	tests/test-qemu-arm-acpi.sh \
 	tests/test-rhel5-xen-dom0.sh \
 	tests/test-rhel5-xen-domU-hvm.sh \
 	tests/test-rhel5-xen-domU-hvm-ia64.sh \
@@ -137,6 +138,11 @@ EXTRA_DIST = \
 	tests/qemu-arm/sbin/dmidecode \
 	tests/qemu-arm/sbin/uname \
 	tests/qemu-arm/sbin/virt-what-cpuid-helper \
+	tests/qemu-arm-acpi/proc/cpuinfo \
+	tests/qemu-arm-acpi/proc/self/status \
+	tests/qemu-arm-acpi/sbin/dmidecode \
+	tests/qemu-arm-acpi/sbin/uname \
+	tests/qemu-arm-acpi/sbin/virt-what-cpuid-helper \
 	tests/rhel5-xen-dom0/proc/cpuinfo \
 	tests/rhel5-xen-dom0/proc/self/status \
 	tests/rhel5-xen-dom0/proc/xen/balloon \

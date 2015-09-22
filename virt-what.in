@@ -264,6 +264,11 @@ if ! "$skip_qemu_kvm"; then
             # using KVM acceleration or not.
             echo qemu
             skip_lkvm=true
+        elif echo "$dmi" | grep -q 'Manufacturer: QEMU'; then
+            # We don't have enough information to determine if we're
+            # using KVM acceleration or not.
+            echo qemu
+            skip_lkvm=true
         fi
     else
         # XXX This is known to fail for qemu with the explicit -cpu
