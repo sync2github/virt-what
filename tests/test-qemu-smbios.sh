@@ -15,7 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-root=tests/qemu-arm-acpi
+root=tests/qemu-smbios
 
 output="$(./virt-what --test-root=$root 2>&1)"
 expected="qemu"
