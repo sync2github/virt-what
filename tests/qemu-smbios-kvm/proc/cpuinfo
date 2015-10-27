@@ -1,0 +1,63 @@
+processor	: 0
+Features	: fp asimd evtstrm
+CPU implementer	: 0x50
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0x000
+CPU revision	: 0
+
+processor	: 1
+Features	: fp asimd evtstrm
+CPU implementer	: 0x50
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0x000
+CPU revision	: 0
+
+processor	: 2
+Features	: fp asimd evtstrm
+CPU implementer	: 0x50
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0x000
+CPU revision	: 0
+
+processor	: 3
+Features	: fp asimd evtstrm
+CPU implementer	: 0x50
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0x000
+CPU revision	: 0
+
+processor	: 4
+Features	: fp asimd evtstrm
+CPU implementer	: 0x50
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0x000
+CPU revision	: 0
+
+processor	: 5
+Features	: fp asimd evtstrm
+CPU implementer	: 0x50
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0x000
+CPU revision	: 0
+
+processor	: 6
+Features	: fp asimd evtstrm
+CPU implementer	: 0x50
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0x000
+CPU revision	: 0
+
+processor	: 7
+Features	: fp asimd evtstrm
+CPU implementer	: 0x50
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0x000
+CPU revision	: 0
