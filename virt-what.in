@@ -262,9 +262,12 @@ fi
 if ! "$skip_qemu_kvm"; then
     if [ "$cpuid" = "KVMKVMKVM" ]; then
         echo kvm
+    elif echo "$dmi" | grep -q 'Product Name: KVM'; then
+        echo kvm
+        skip_lkvm=true
     elif echo "$dmi" | grep -q 'Manufacturer: QEMU'; then
-        # We don't have enough information to determine if we're
-        # using KVM acceleration or not.
+        # The test for KVM above failed, so now we know we're
+        # not using KVM acceleration.
         echo qemu
         skip_lkvm=true
     elif [ "$arch" = "arm" ] || [ "$arch" = "aarch64" ]; then
