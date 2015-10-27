@@ -262,14 +262,14 @@ fi
 if ! "$skip_qemu_kvm"; then
     if [ "$cpuid" = "KVMKVMKVM" ]; then
         echo kvm
+    elif echo "$dmi" | grep -q 'Manufacturer: QEMU'; then
+        # We don't have enough information to determine if we're
+        # using KVM acceleration or not.
+        echo qemu
+        skip_lkvm=true
     elif [ "$arch" = "arm" ] || [ "$arch" = "aarch64" ]; then
         if [ -d "${root}/proc/device-tree" ] &&
             ls "${root}/proc/device-tree" | grep -q "fw-cfg"; then
-            # We don't have enough information to determine if we're
-            # using KVM acceleration or not.
-            echo qemu
-            skip_lkvm=true
-        elif echo "$dmi" | grep -q 'Manufacturer: QEMU'; then
             # We don't have enough information to determine if we're
             # using KVM acceleration or not.
             echo qemu
