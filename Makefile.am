@@ -51,6 +51,10 @@ TESTS = \
 	tests/test-lxc.sh \
 	tests/test-lx86.sh \
 	tests/test-parallels-desktop.sh \
+	tests/test-ppc64-baremetal.sh \
+	tests/test-ppc64-kvm.sh \
+	tests/test-ppc64-lpar-dedicated.sh \
+	tests/test-ppc64-lpar-shared.sh \
 	tests/test-qemu.sh \
 	tests/test-qemu-arm.sh \
 	tests/test-qemu-smbios.sh \
@@ -128,6 +132,27 @@ EXTRA_DIST = \
 	tests/parallels-desktop/sbin/dmidecode \
 	tests/parallels-desktop/sbin/uname \
 	tests/parallels-desktop/sbin/virt-what-cpuid-helper \
+	tests/ppc64-baremetal/proc/cpuinfo \
+	tests/ppc64-baremetal/proc/self/status \
+	tests/ppc64-baremetal/sbin/dmidecode \
+	tests/ppc64-baremetal/sbin/uname \
+	tests/ppc64-baremetal/sbin/virt-what-cpuid-helper \
+	tests/ppc64-kvm/proc/cpuinfo \
+	tests/ppc64-kvm/proc/self/status \
+	tests/ppc64-kvm/sbin/dmidecode \
+	tests/ppc64-kvm/sbin/uname \
+	tests/ppc64-kvm/sbin/virt-what-cpuid-helper \
+	tests/ppc64-lpar-dedicated/proc/cpuinfo \
+	tests/ppc64-lpar-dedicated/proc/ppc64/lparcfg \
+	tests/ppc64-lpar-shared/sbin/dmidecode \
+	tests/ppc64-lpar-shared/sbin/uname \
+	tests/ppc64-lpar-shared/sbin/virt-what-cpuid-helper \
+	tests/ppc64-lpar-shared/proc/cpuinfo \
+	tests/ppc64-lpar-shared/proc/self/status \
+	tests/ppc64-lpar-shared/proc/ppc64/lparcfg \
+	tests/ppc64-lpar-shared/sbin/dmidecode \
+	tests/ppc64-lpar-shared/sbin/uname \
+	tests/ppc64-lpar-shared/sbin/virt-what-cpuid-helper \
 	tests/qemu/proc/cpuinfo \
 	tests/qemu/proc/self/status \
 	tests/qemu/sbin/dmidecode \
