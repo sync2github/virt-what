@@ -18,7 +18,7 @@
 root=tests/ppc64-kvm
 
 output="$(./virt-what --test-root=$root 2>&1)"
-expected="ibm_ppc64_kvm"
+expected="ibm_power-kvm"
 
 if [ "$output" != "$expected" ]; then
     echo "$0: test failed because output did not match expected"
