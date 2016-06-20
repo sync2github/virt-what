@@ -18,7 +18,7 @@
 root=tests/ppc64-lpar-shared
 
 output="$(./virt-what --test-root=$root 2>&1)"
-expected="ibm_ppc64_lpar_shared"
+expected="ibm_power-lpar_shared"
 
 if [ "$output" != "$expected" ]; then
     echo "$0: test failed because output did not match expected"
