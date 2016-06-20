@@ -1,0 +1,44 @@
+processor	: 0
+cpu		: POWER8 (architected), altivec supported
+clock		: 4116.000000MHz
+revision	: 2.0 (pvr 004b 0200)
+
+processor	: 1
+cpu		: POWER8 (architected), altivec supported
+clock		: 4116.000000MHz
+revision	: 2.0 (pvr 004b 0200)
+
+processor	: 2
+cpu		: POWER8 (architected), altivec supported
+clock		: 4116.000000MHz
+revision	: 2.0 (pvr 004b 0200)
+
+processor	: 3
+cpu		: POWER8 (architected), altivec supported
+clock		: 4116.000000MHz
+revision	: 2.0 (pvr 004b 0200)
+
+processor	: 4
+cpu		: POWER8 (architected), altivec supported
+clock		: 4116.000000MHz
+revision	: 2.0 (pvr 004b 0200)
+
+processor	: 5
+cpu		: POWER8 (architected), altivec supported
+clock		: 4116.000000MHz
+revision	: 2.0 (pvr 004b 0200)
+
+processor	: 6
+cpu		: POWER8 (architected), altivec supported
+clock		: 4116.000000MHz
+revision	: 2.0 (pvr 004b 0200)
+
+processor	: 7
+cpu		: POWER8 (architected), altivec supported
+clock		: 4116.000000MHz
+revision	: 2.0 (pvr 004b 0200)
+
+timebase	: 512000000
+platform	: pSeries
+model		: IBM,8286-42A
+machine		: CHRP IBM,8286-42A
