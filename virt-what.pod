@@ -37,6 +37,21 @@ This is Microsoft Hyper-V hypervisor.
 
 Status: confirmed by RWMJ
 
+=item B<ibm_power-kvm>
+
+This is an IBM POWER KVM guest.
+
+Status: contributed by Adrian Likins.
+
+=item B<ibm_power-lpar_shared>
+
+=item B<ibm_power-lpar_dedicated>
+
+This is an IBM POWER LPAR (hardware partition) in either shared
+or dedicated mode.
+
+Status: contributed by Adrian Likins.
+
 =item B<ibm_systemz>
 
 This is an IBM SystemZ (or other S/390) hardware partitioning system.

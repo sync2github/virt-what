@@ -316,13 +316,13 @@ fi
 if [ "$arch" = "ppc64" ]; then
     if have_cpuinfo && grep -q 'platform.**pSeries' "${root}/proc/cpuinfo"; then
         if grep -q 'model.*emulated by qemu' "${root}/proc/cpuinfo"; then
-                echo ibm_ppc64_kvm
+                echo ibm_power-kvm
         else
             # Assume LPAR, now detect shared or dedicated
             if grep -q 'shared_processor_mode=1' "${root}/proc/ppc64/lparcfg"; then
-                echo ibm_ppc64_lpar_shared
+                echo ibm_power-lpar_shared
             else
-                echo ibm_ppc64_lpar_dedicated
+                echo ibm_power-lpar_dedicated
             fi
         # detect powerkvm?
         fi
