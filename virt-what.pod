@@ -133,7 +133,8 @@ Status: contributed by Evgeniy Sokolov
 
 =item B<ovirt>
 
-The guest is running on an oVirt or RHEV node.
+The guest is running on an oVirt node.
+(See also C<rhev> below).
 
 Status: contributed by RWMJ, not confirmed
 
@@ -159,6 +160,12 @@ Note that for KVM (hardware accelerated) guests you should I<not> see
 this.
 
 Status: confirmed by RWMJ.
+
+=item B<rhev>
+
+The guest is running on a Red Hat Enterprise Virtualization (RHEV) node.
+
+Status: confirmed by RWMJ
 
 =item B<uml>
 

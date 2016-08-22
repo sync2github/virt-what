@@ -203,9 +203,12 @@ if echo "$dmi" | grep -q 'Vendor: Parallels'; then
     skip_qemu_kvm=true
 fi
 
-# Check for oVirt.
+# Check for oVirt/RHEV.
 if echo "$dmi" | grep -q 'Manufacturer: oVirt'; then
     echo ovirt
+fi
+if echo "$dmi" | grep -q 'Product Name: RHEV Hypervisor'; then
+    echo rhev
 fi
 
 # Check for Xen.
