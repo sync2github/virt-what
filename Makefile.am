@@ -40,6 +40,7 @@ endif
 
 TESTS = \
 	tests/test-baremetal.sh \
+	tests/test-bhyve.sh \
 	tests/test-docker.sh \
 	tests/test-esx4.1.sh \
 	tests/test-hyperv.sh \

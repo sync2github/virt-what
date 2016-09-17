@@ -134,6 +134,13 @@ if echo "$dmi" | grep -q 'Manufacturer: innotek GmbH'; then
     echo virtualbox
 fi
 
+# Check for bhyve.
+if [ "$cpuid" = "bhyve bhyve " ]; then
+  echo bhyve
+elif echo "$dmi" | grep -q "Vendor: BHYVE"; then
+  echo bhyve
+fi
+
 # Check for OpenVZ / Virtuozzo.
 # Added by Evgeniy Sokolov.
 # /proc/vz - always exists if OpenVZ kernel is running (inside and outside
