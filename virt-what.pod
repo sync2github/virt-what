@@ -25,6 +25,12 @@ don't know about or cannot detect.
 
 =over 4
 
+=item B<bhyve>
+
+This is a bhyve (FreeBSD hypervisor) guest.
+
+Status: contributed by Leonardo Brondani Schenkel.
+
 =item B<docker>
 
 This is a Docker container.
