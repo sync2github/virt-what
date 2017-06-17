@@ -1,6 +1,6 @@
 #!/bin/sh -
 # @configure_input@
-# Copyright (C) 2008-2015 Red Hat Inc.
+# Copyright (C) 2008-2017 Red Hat Inc.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -223,7 +223,8 @@ fi
 
 # Check for Xen.
 
-if [ "$cpuid" = "XenVMMXenVMM" ]; then
+if [ "$cpuid" = "XenVMMXenVMM" ] &&
+    ! echo "$dmi" | grep -q 'No SMBIOS nor DMI entry point found, sorry'; then
     echo xen; echo xen-hvm
     # Check for AWS
     if echo "$dmi" | grep -q 'Version: [0-9]\.[0-9]\.amazon'; then
