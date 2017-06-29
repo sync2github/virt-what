@@ -288,6 +288,11 @@ if ! "$skip_qemu_kvm"; then
             echo qemu
             skip_lkvm=true
         fi
+    elif [ -d /proc/device-tree/hypervisor ] &&
+         grep -q "linux,kvm" /proc/device-tree/hypervisor/compatible; then
+        # We are running as a spapr KVM guest on ppc64
+        echo kvm
+        skip_lkvm=true
     else
         # XXX This is known to fail for qemu with the explicit -cpu
         # option, since /proc/cpuinfo will not contain the QEMU
