@@ -295,6 +295,9 @@ if ! "$skip_qemu_kvm"; then
         # another CPUID leaf for non-accelerated qemu.
         if grep -q 'QEMU' "${root}/proc/cpuinfo"; then
             echo qemu
+        # https://bugzilla.redhat.com/show_bug.cgi?id=1455676#c6
+        elif grep -q 'emulated by qemu' "${root}/proc/cpuinfo"; then
+            echo qemu
         fi
     fi
 fi
