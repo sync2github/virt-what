@@ -213,6 +213,12 @@ The guest appears to be running on Microsoft VirtualPC.
 
 Status: not confirmed
 
+=item B<vmm>
+
+This is a vmm (OpenBSD hypervisor) guest.
+
+Status: contributed by Jasper Lievisse Adriaanse.
+
 =item B<vmware>
 
 The guest appears to be running on VMware hypervisor.

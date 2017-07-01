@@ -349,3 +349,8 @@ if [ "$arch" = "ppc64" ]; then
         fi
     fi
 fi
+
+# Check for OpenBSD/VMM
+if [ "$cpuid" = "OpenBSDVMM58" ]; then
+        echo vmm
+fi

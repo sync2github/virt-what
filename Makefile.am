@@ -65,6 +65,7 @@ TESTS = \
 	tests/test-rhel5-xen-domU-hvm-ia64.sh \
 	tests/test-rhel5-xen-domU-pv.sh \
 	tests/test-rhev.sh \
+	tests/test-vmm.sh \
 	tests/test-xen-arm.sh \
 	tests/test-zvm.sh
 
@@ -244,6 +245,12 @@ EXTRA_DIST = \
 	tests/rhev/sbin/dmidecode \
 	tests/rhev/sbin/uname \
 	tests/rhev/sbin/virt-what-cpuid-helper \
+	tests/vmm/proc/cpuinfo \
+	tests/vvm/proc/self/status \
+	tests/vvm/proc/sysinfo \
+	tests/vvm/sbin/dmidecode \
+	tests/vvm/sbin/uname \
+	tests/vvm/sbin/virt-what-cpuid-helper \
 	tests/xen-arm/proc/cpuinfo \
 	tests/xen-arm/proc/device-tree/hypervisor/compatible \
 	tests/xen-arm/proc/self/status \
