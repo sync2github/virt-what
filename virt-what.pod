@@ -93,6 +93,37 @@ This is a KVM guest running on an IBM System Z hardware system.
 
 Status: contributed by Thomas Huth
 
+=item B<ldoms>
+
+The guest appears to be running on an Linux SPARC system with
+Oracle VM Server for SPARC (Logical Domains) support.
+
+Status: contributed by Darren Kenny
+
+=item B<ldoms-control>
+
+The is the Oracle VM Server for SPARC (Logical Domains) control domain.
+
+Status: contributed by Darren Kenny
+
+=item B<ldoms-guest>
+
+The is the Oracle VM Server for SPARC (Logical Domains) guest domain.
+
+Status: contributed by Darren Kenny
+
+=item B<ldoms-io>
+
+The is the Oracle VM Server for SPARC (Logical Domains) I/O domain.
+
+Status: contributed by Darren Kenny
+
+=item B<ldoms-root>
+
+The is the Oracle VM Server for SPARC (Logical Domains) Root domain.
+
+Status: contributed by Darren Kenny
+
 =item B<linux_vserver>
 
 This is printed for backwards compatibility with older virt-what which

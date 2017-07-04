@@ -47,6 +47,7 @@ TESTS = \
 	tests/test-kvm.sh \
 	tests/test-kvm-explicit-cpu.sh \
 	tests/test-linux-vserver.sh \
+	tests/test-ldoms.sh \
 	tests/test-lkvm.sh \
 	tests/test-lkvm-arm.sh \
 	tests/test-lxc.sh \
@@ -103,6 +104,8 @@ EXTRA_DIST = \
 	tests/kvm-explicit-cpu/sbin/dmidecode \
 	tests/kvm-explicit-cpu/sbin/uname \
 	tests/kvm-explicit-cpu/sbin/virt-what-cpuid-helper \
+	tests/ldoms/dev/mdesc \
+	tests/ldoms/proc/cpuinfo \
 	tests/linux-vserver/proc/cpuinfo \
 	tests/linux-vserver/proc/self/status \
 	tests/linux-vserver/sbin/dmidecode \
