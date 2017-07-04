@@ -194,7 +194,9 @@ fi
 if have_cpuinfo && grep -q '^vendor_id.*IBM/S390' "${root}/proc/cpuinfo"; then
     echo ibm_systemz
     if [ -f "${root}/proc/sysinfo" ]; then
-        if grep -q 'VM.*Control Program.*z/VM' "${root}/proc/sysinfo"; then
+        if grep -q 'VM.*Control Program.*KVM/Linux' "${root}/proc/sysinfo"; then
+            echo ibm_systemz-kvm
+        elif grep -q 'VM.*Control Program.*z/VM' "${root}/proc/sysinfo"; then
             echo ibm_systemz-zvm
         elif grep -q '^LPAR' "${root}/proc/sysinfo"; then
             echo ibm_systemz-lpar

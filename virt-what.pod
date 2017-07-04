@@ -78,7 +78,7 @@ Status: not confirmed
 This is Linux running directly on an LPAR on an IBM SystemZ
 hardware partitioning system.
 
-Status: not confirmed
+Status: confirmed by Thomas Huth
 
 =item B<ibm_systemz-zvm>
 
@@ -86,6 +86,12 @@ This is a z/VM guest running in an LPAR on an IBM SystemZ
 hardware partitioning system.
 
 Status: confirmed by RWMJ using a Fedora guest running in z/VM
+
+=item B<ibm_systemz-kvm>
+
+This is a KVM guest running on an IBM System Z hardware system.
+
+Status: contributed by Thomas Huth
 
 =item B<linux_vserver>
 
