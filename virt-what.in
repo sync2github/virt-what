@@ -74,6 +74,7 @@ test $# -gt 0 && fail "extra operand '$1'"
 prefix=@prefix@
 exec_prefix=@exec_prefix@
 PATH="${root}@libexecdir@:${root}/sbin:${root}/usr/sbin:${PATH}"
+export PATH
 
 # Check we're running as root.
 EFFUID=$(id -u) || fail "failed to get current user id"
