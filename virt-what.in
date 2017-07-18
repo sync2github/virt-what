@@ -275,6 +275,9 @@ fi
 if ! "$skip_qemu_kvm"; then
     if [ "$cpuid" = "KVMKVMKVM" ]; then
         echo kvm
+    elif [ "$cpuid" = "TCGTCGTCGTCG" ]; then
+        echo qemu
+        skip_lkvm=true
     elif echo "$dmi" | grep -q 'Product Name: KVM'; then
         echo kvm
         skip_lkvm=true
@@ -297,10 +300,10 @@ if ! "$skip_qemu_kvm"; then
         echo kvm
         skip_lkvm=true
     else
-        # XXX This is known to fail for qemu with the explicit -cpu
+        # This is known to fail for qemu with the explicit -cpu
         # option, since /proc/cpuinfo will not contain the QEMU
-        # string.  The long term fix for this would be to export
-        # another CPUID leaf for non-accelerated qemu.
+        # string. QEMU 2.10 added a new CPUID leaf, so this
+        # problem only triggered for older QEMU
         if grep -q 'QEMU' "${root}/proc/cpuinfo"; then
             echo qemu
         fi
