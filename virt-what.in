@@ -298,7 +298,7 @@ if ! "$skip_qemu_kvm"; then
             echo qemu
             skip_lkvm=true
         fi
-    elif [ -d /proc/device-tree/hypervisor ] &&
+    elif [ -d ${root}/proc/device-tree/hypervisor ] &&
          grep -q "linux,kvm" /proc/device-tree/hypervisor/compatible; then
         # We are running as a spapr KVM guest on ppc64
         echo kvm
