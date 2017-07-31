@@ -110,6 +110,8 @@ EXTRA_DIST = \
 	tests/kvm-explicit-cpu/sbin/virt-what-cpuid-helper \
 	tests/ldoms/dev/mdesc \
 	tests/ldoms/proc/cpuinfo \
+	tests/ldoms/sbin/uname \
+	tests/ldoms/sbin/virt-what-cpuid-helper \
 	tests/linux-vserver/proc/cpuinfo \
 	tests/linux-vserver/proc/self/status \
 	tests/linux-vserver/sbin/dmidecode \
