@@ -78,6 +78,10 @@ EXTRA_DIST = \
 	tests/baremetal/sbin/dmidecode \
 	tests/baremetal/sbin/uname \
 	tests/baremetal/sbin/virt-what-cpuid-helper \
+	tests/bhyve/proc/cpuinfo \
+	tests/bhyve/sbin/dmidecode \
+	tests/bhyve/sbin/uname \
+	tests/bhyve/sbin/virt-what-cpuid-helper \
 	tests/docker/.dockerinit \
 	tests/docker/proc/cpuinfo \
 	tests/docker/proc/self/status \
@@ -139,7 +143,6 @@ EXTRA_DIST = \
 	tests/parallels-desktop/sbin/uname \
 	tests/parallels-desktop/sbin/virt-what-cpuid-helper \
 	tests/ppc64-baremetal/proc/cpuinfo \
-	tests/ppc64-baremetal/proc/self/status \
 	tests/ppc64-baremetal/sbin/dmidecode \
 	tests/ppc64-baremetal/sbin/uname \
 	tests/ppc64-baremetal/sbin/virt-what-cpuid-helper \
@@ -150,6 +153,9 @@ EXTRA_DIST = \
 	tests/ppc64-kvm/sbin/virt-what-cpuid-helper \
 	tests/ppc64-lpar-dedicated/proc/cpuinfo \
 	tests/ppc64-lpar-dedicated/proc/ppc64/lparcfg \
+	tests/ppc64-lpar-dedicated/sbin/dmidecode \
+	tests/ppc64-lpar-dedicated/sbin/uname \
+	tests/ppc64-lpar-dedicated/sbin/virt-what-cpuid-helper \
 	tests/ppc64-lpar-shared/sbin/dmidecode \
 	tests/ppc64-lpar-shared/sbin/uname \
 	tests/ppc64-lpar-shared/sbin/virt-what-cpuid-helper \
@@ -249,11 +255,9 @@ EXTRA_DIST = \
 	tests/rhev/sbin/uname \
 	tests/rhev/sbin/virt-what-cpuid-helper \
 	tests/vmm/proc/cpuinfo \
-	tests/vvm/proc/self/status \
-	tests/vvm/proc/sysinfo \
-	tests/vvm/sbin/dmidecode \
-	tests/vvm/sbin/uname \
-	tests/vvm/sbin/virt-what-cpuid-helper \
+	tests/vmm/sbin/dmidecode \
+	tests/vmm/sbin/uname \
+	tests/vmm/sbin/virt-what-cpuid-helper \
 	tests/xen-arm/proc/cpuinfo \
 	tests/xen-arm/proc/device-tree/hypervisor/compatible \
 	tests/xen-arm/proc/self/status \
