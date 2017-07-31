@@ -17,18 +17,9 @@
 
 root=tests/ldoms
 
-# Include src dir in PATH
-export PATH=.:${PATH}
-
-arch=$(uname -p | sed -e 's/i.86/i386/' | sed -e 's/arm.*/arm/')
-
 output="$(./virt-what --test-root=$root 2>&1)"
-if [[ "${arch}" == sparc* ]]; then
-    expected="ldoms
+expected="ldoms
 ldoms-guest"
-else
-    expected=""
-fi
 
 if [ "$output" != "$expected" ]; then
     echo "$0: test failed because output did not match expected"
