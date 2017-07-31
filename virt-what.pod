@@ -25,6 +25,12 @@ don't know about or cannot detect.
 
 =over 4
 
+=item B<aws>
+
+Amazon Web Services cloud guest.
+
+Status: contributed by Qi Guo.
+
 =item B<bhyve>
 
 This is a bhyve (FreeBSD hypervisor) guest.
