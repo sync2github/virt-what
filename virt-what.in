@@ -360,20 +360,20 @@ if [ "$cpuid" = "OpenBSDVMM58" ]; then
 fi
 
 # Check for LDoms
-if [[ "$arch" == sparc* && -e ${root}/dev/mdesc ]]; then
+if [ "${arch#sparc}" != "$arch" ] && [ -e "${root}/dev/mdesc" ]; then
     echo ldoms
-    if [[ -d ${root}/sys/class/vlds/ctrl && \
-             -d ${root}/sys/class/vlds/sp ]]; then
+    if [ -d "${root}/sys/class/vlds/ctrl" ] && \
+             [ -d "${root}/sys/class/vlds/sp" ]; then
         echo ldoms-control
     else
         echo ldoms-guest
     fi
     MDPROP="${root}/usr/lib/ldoms/mdprop.py"
-    if [[ -x ${MDPROP} ]]; then
-        if [[ -n $($MDPROP -v iodevice device-type=pciex) ]]; then
+    if [ -x "${MDPROP}" ]; then
+        if [ -n "$($MDPROP -v iodevice device-type=pciex)" ]; then
             echo ldoms-root
             echo ldoms-io
-        elif [[ -n $($MDPROP -v iov-device vf-id=0) ]]; then
+        elif [ -n "$($MDPROP -v iov-device vf-id=0)" ]; then
             echo ldoms-io
         fi
     fi
