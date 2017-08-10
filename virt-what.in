@@ -308,7 +308,7 @@ if ! "$skip_qemu_kvm"; then
         # option, since /proc/cpuinfo will not contain the QEMU
         # string. QEMU 2.10 added a new CPUID leaf, so this
         # problem only triggered for older QEMU
-        if grep -q 'QEMU' "${root}/proc/cpuinfo"; then
+        if have_cpuinfo && grep -q 'QEMU' "${root}/proc/cpuinfo"; then
             echo qemu
         fi
     fi
