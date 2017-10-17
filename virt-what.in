@@ -339,7 +339,7 @@ fi
 # example /proc/ppc64/lparcfg systemtype line
 # system_type=IBM pSeries (emulated by qemu)
 
-if [ "$arch" = "ppc64" ]; then
+if [ "$arch" = "ppc64" ] || [ "$arch" = "ppc64le" ] ; then
     if have_cpuinfo && grep -q 'platform.**pSeries' "${root}/proc/cpuinfo"; then
         if grep -q 'model.*emulated by qemu' "${root}/proc/cpuinfo"; then
                 echo ibm_power-kvm
