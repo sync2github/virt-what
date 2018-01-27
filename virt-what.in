@@ -102,9 +102,9 @@ cpuid=$(virt-what-cpuid-helper)
 dmi=$(LANG=C dmidecode 2>&1)
 
 # Architecture.
-# Note for the purpose of testing, we only call uname with -p option.
+# Note for the purpose of testing, we only call uname with -m option.
 
-arch=$(uname -p | sed -e 's/i.86/i386/' | sed -e 's/arm.*/arm/')
+arch=$(uname -m | sed -e 's/i.86/i386/' | sed -e 's/arm.*/arm/')
 
 # Check for VMware.
 # cpuid check added by Chetan Loke.
