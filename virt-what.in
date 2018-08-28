@@ -42,7 +42,7 @@ use_sysctl() {
     # Lacking /proc, on some systems sysctl can be used instead.
     OS=$(uname) || fail "failed to get operating system name"
 
-    [ "$OS" == "OpenBSD" ]
+    [ "$OS" = "OpenBSD" ]
 }
 
 fail () {
