@@ -41,6 +41,7 @@ endif
 TESTS = \
 	tests/test-aws-baremetal-x86.sh \
 	tests/test-aws-kvm-x86.sh \
+	tests/test-aws-xen-x86.sh \
 	tests/test-baremetal.sh \
 	tests/test-bhyve.sh \
 	tests/test-docker.sh \
@@ -85,6 +86,11 @@ EXTRA_DIST = \
 	tests/aws-kvm-x86/sbin/dmidecode \
 	tests/aws-kvm-x86/sbin/uname \
 	tests/aws-kvm-x86/sbin/virt-what-cpuid-helper \
+	tests/aws-xen-x86/proc/cpuinfo \
+	tests/aws-xen-x86/proc/self/status \
+	tests/aws-xen-x86/sbin/dmidecode \
+	tests/aws-xen-x86/sbin/uname \
+	tests/aws-xen-x86/sbin/virt-what-cpuid-helper \
 	tests/baremetal/proc/cpuinfo \
 	tests/baremetal/proc/self/status \
 	tests/baremetal/sbin/dmidecode \
