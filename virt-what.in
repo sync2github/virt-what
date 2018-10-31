@@ -233,10 +233,6 @@ fi
 if [ "$cpuid" = "XenVMMXenVMM" ] &&
     ! echo "$dmi" | grep -q 'No SMBIOS nor DMI entry point found, sorry'; then
     echo xen; echo xen-hvm
-    # Check for AWS
-    if echo "$dmi" | grep -q 'Version: [0-9]\.[0-9]\.amazon'; then
-        echo aws
-    fi
     skip_qemu_kvm=true
 elif [ -d "${root}/proc/xen" ]; then
     echo xen
@@ -391,4 +387,13 @@ if [ "${arch#sparc}" != "$arch" ] && [ -e "${root}/dev/mdesc" ]; then
             echo ldoms-io
         fi
     fi
+fi
+
+# Check for AWS.
+# AWS on Xen.
+if echo "$dmi" | grep -q 'Version: [0-9]\.[0-9]\.amazon'; then
+    echo aws
+# AWS on baremetal or KVM.
+elif echo "$dmi" | grep -q 'Vendor: Amazon EC2'; then
+    echo aws
 fi

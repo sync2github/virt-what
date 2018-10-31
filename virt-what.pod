@@ -27,9 +27,13 @@ don't know about or cannot detect.
 
 =item B<aws>
 
-Amazon Web Services cloud guest.
+Amazon Web Services.
 
-Status: contributed by Qi Guo.
+Note that virt-what will print this fact for baremetal AWS instances,
+which you might not consider to be true virtualization.  In this case
+other facts (eg. C<kvm> or C<xen>) would I<not> be present.
+
+Status: contributed by Qi Guo, Vitaly Kuznetsov, confirmed by RWMJ.
 
 =item B<bhyve>
 
