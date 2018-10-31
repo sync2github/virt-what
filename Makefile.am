@@ -39,6 +39,7 @@ virt-what.txt: virt-what.pod
 endif
 
 TESTS = \
+	tests/test-aws-baremetal-x86.sh \
 	tests/test-aws-kvm-x86.sh \
 	tests/test-baremetal.sh \
 	tests/test-bhyve.sh \
@@ -74,6 +75,11 @@ TESTS = \
 EXTRA_DIST = \
 	virt-what.in \
 	virt-what.pod \
+	tests/aws-baremetal-x86/proc/cpuinfo \
+	tests/aws-baremetal-x86/proc/self/status \
+	tests/aws-baremetal-x86/sbin/dmidecode \
+	tests/aws-baremetal-x86/sbin/uname \
+	tests/aws-baremetal-x86/sbin/virt-what-cpuid-helper \
 	tests/aws-kvm-x86/proc/cpuinfo \
 	tests/aws-kvm-x86/proc/self/status \
 	tests/aws-kvm-x86/sbin/dmidecode \
