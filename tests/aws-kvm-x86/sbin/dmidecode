@@ -1,0 +1,68 @@
+#!/bin/sh -
+cat <<'EOF'
+# dmidecode 3.0
+Getting SMBIOS data from sysfs.
+SMBIOS 2.7 present.
+5 structures occupying 233 bytes.
+Table at 0x000F8FD0.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+	Vendor: Amazon EC2
+	Version: 1.0
+	Release Date: 10/16/2017
+	Address: 0xF0000
+	Runtime Size: 64 kB
+	ROM Size: 64 kB
+	Characteristics:
+		PCI is supported
+		EDD is supported
+		ACPI is supported
+		System is a virtual machine
+	BIOS Revision: 1.0
+
+Handle 0x0001, DMI type 1, 27 bytes
+System Information
+	Manufacturer: Amazon EC2
+	Product Name: c5.large
+	Version: Not Specified
+	Serial Number: ec2cecdd-c1c8-7a71-0ea8-aef580c9f845
+	UUID: EC2CECDD-C1C8-7A71-0EA8-AEF580C9F845
+	Wake-up Type: Power Switch
+	SKU Number: Not Specified
+	Family: Not Specified
+
+Handle 0x0002, DMI type 2, 15 bytes
+Base Board Information
+	Manufacturer: Amazon EC2
+	Product Name: Not Specified
+	Version: Not Specified
+	Serial Number: Not Specified
+	Asset Tag: i-04f9b1c56b3c301b5
+	Features: None
+	Location In Chassis: Not Specified
+	Chassis Handle: 0x0003
+	Type: Other
+	Contained Object Handles: 0
+
+Handle 0x0003, DMI type 3, 21 bytes
+Chassis Information
+	Manufacturer: Amazon EC2
+	Type: Other
+	Lock: Not Present
+	Version: Not Specified
+	Serial Number: Not Specified
+	Asset Tag: Amazon EC2
+	Boot-up State: Safe
+	Power Supply State: Safe
+	Thermal State: Safe
+	Security Status: None
+	OEM Information: 0x00000000
+	Height: Unspecified
+	Number Of Power Cords: 1
+	Contained Elements: 0
+
+Handle 0x0004, DMI type 127, 4 bytes
+End Of Table
+
+EOF
